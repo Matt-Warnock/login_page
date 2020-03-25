@@ -1,13 +1,13 @@
-let password = document.getElementById('password_field').value;
 const output = document.getElementById('validation');
+const button = document.getElementById('submit');
 
-document.getElementById('submit')
-.onclick = function (password) {
+button.addEventListener('click', function() {
+  let password = document.getElementById('password_field').value;
+
   if (password === '12345678') {
     output.textContent = 'Welcome Back!';
-    return;
-
-  } else {
+  }
+  else {
     output.textContent = 'Invalid password';
   }
-};
+});
