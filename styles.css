@@ -2,13 +2,14 @@ body {
   background-image: url(imgs/concrete_wall_3.png);
   font-family: 'Raleway', sans-serif;
   color: #666;
+  text-shadow: 0 1px 1px rgba(255,255,255, 0.6);
 }
 h1 {
   text-align: center;
 }
 .login_window {
   display: grid;
-  width: 50%;
+  width: 40%;
   margin: auto;
 }
 input {
@@ -26,7 +27,7 @@ label {
   display: flex;
   vertical-align: middle;
   background-color: #f9f9f9;
-  width: 100%;
+  width: 95%;
   border: 10px solid #fff;
   font-size: 1.5em;
 }
