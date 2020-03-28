@@ -15,11 +15,13 @@ h1 span {
   font-weight: bold;
 }
 p {
+  margin: 30px;
   text-align: center;
   font-size: 1.5em;
 }
 .login_window {
   display: grid;
+  position: relative;
   grid-gap: 10px;
   background-color: #fff;
   width: 40%;
@@ -39,6 +41,9 @@ input {
   box-shadow: 2px -2px 5px 0.5px rgba(0,0,0,0.75),
         inset -5px 4px 10px 1px rgba(0,0,0,0.67);
 }
+input:hover {
+  cursor: grab;
+}
 label {
   padding: 8px 10px;
   border-right: 1px inset #666;
@@ -54,12 +59,20 @@ label {
   font-size: 1.5em;
 }
 .submit {
-
+  position: absolute;
+  top: 24px;
+  right: -29px;
+  background: linear-gradient(#52CFEB, #42A2BC);
   padding: 7px;
-  border: 9px solid #fff;
+  border: 9px solid #f7f7f7;
   border-radius: 40px;
   color: #fff;
   font-size: 3em;
   line-height: 1em;
-
+  box-shadow: -2px 2px 5px 1px rgba(0,0,0,0.75),
+        inset 3px -4px 10px 1px rgba(0,0,0,0.67);
+}
+.submit:hover {
+  background-color: #52CFEB;
+  cursor: grab;
 }
