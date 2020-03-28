@@ -18,7 +18,7 @@ h1 span {
   grid-gap: 10px;
   background-color: #fff;
   width: 40%;
-  padding: 15px 19px 15px 15px;
+  padding: 18px 22px 18px 18px;
   margin: auto;
   border-radius: 5px;
   box-shadow: -3px 8px 16px 4px rgba(0,0,0,0.67),
@@ -31,6 +31,10 @@ input {
   padding-left: .5em;
   border: none;
   font-size: .8em;
+  box-shadow: 2px -2px 5px 0.5px rgba(0,0,0,0.75),
+        inset -5px 4px 10px 1px rgba(0,0,0,0.67);
+
+
 }
 label {
   padding: 8px;
@@ -42,7 +46,7 @@ label {
   background-color: #f9f9f9;
   width: 100%;
   border: 2px inset;
-  border-radius: 5px;
+  border-radius: 6px;
   font-size: 1.5em;
 }
 .username {
