@@ -18,9 +18,11 @@ h1 span {
   grid-gap: 10px;
   background-color: #fff;
   width: 40%;
-  padding: 10px 14px 10px 10px;
+  padding: 15px 19px 15px 15px;
   margin: auto;
   border-radius: 5px;
+  box-shadow: -3px 8px 16px 4px rgba(0,0,0,0.67),
+  inset 1px -2px 7px 3px rgba(0,0,0,0.57);
 }
 
 input {
@@ -40,6 +42,7 @@ label {
   background-color: #f9f9f9;
   width: 100%;
   border: 2px inset;
+  border-radius: 5px;
   font-size: 1.5em;
 }
 .username {
