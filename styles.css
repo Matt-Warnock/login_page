@@ -14,6 +14,10 @@ h1 {
 h1 span {
   font-weight: bold;
 }
+p {
+  text-align: center;
+  font-size: 1.5em;
+}
 .login_window {
   display: grid;
   grid-gap: 10px;
@@ -36,13 +40,26 @@ input {
         inset -5px 4px 10px 1px rgba(0,0,0,0.67);
 }
 label {
-  padding: 8px;
+  padding: 8px 10px;
   border-right: 1px inset #666;
+  box-shadow: 2px -2px 5px 0.5px rgba(0,0,0,0.75),
+      inset -4px 0px 10px 2px rgba(255,255,255,7),
+         inset -5px 4px 10px 1px rgba(0,0,0,0.67);
 }
 .username, .password {
   display: flex;
   background-color: #f9f9f9;
-  border: 2px inset;
+  border: 2px inset #fff;
   border-radius: 6px;
   font-size: 1.5em;
+}
+.submit {
+
+  padding: 7px;
+  border: 9px solid #fff;
+  border-radius: 40px;
+  color: #fff;
+  font-size: 3em;
+  line-height: 1em;
+
 }
