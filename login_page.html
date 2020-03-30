@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Log-in</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <h1>PASSWORD<span>VALIDATION</span></h1>
+  <div class="login_window">
+    <div class="wrapper">
+      <label for="username">💃</label>
+      <input type="text" name="username" id="username" placeholder="jdole@example.com">
+    </div>
+    <div class="wrapper">
+      <label for="password_field">🔒</label>
+      <input type="password" name="password_field" id="password_field" placeholder="p455word" min="8" required>
+    </div>
+    <button type="button" name="submit" class="submit" id="submit"><span class="button">➡️</span></button>
+  </div>
+  <p id="validation"></p>
+
+  <script type="text/javascript" src="login.js"></script>
+</body>
+
+</html>
