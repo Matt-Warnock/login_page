@@ -1,14 +1,19 @@
+const passwords = ['greenbear757', 'organicswan134', 'bluemouse519', 'heavytiger886', 'heavyladybug575'];
+let isAMatch;
+
 function verifiyPassword(hash) {
-  checkpw("12345678", hash, displayResult, null);
-  return;
+  isAMatch = [];
+  passwords.forEach( (item) => checkpw(item, hash, (result) => {return isAMatch.push(result);}, null));
 }
 
-function displayResult(result) {
+
+function displayResult() {
   const output = document.getElementById('validation');
-  
-  return result ? output.textContent = 'Welcome Back!' :
+
+  return isAMatch.some(match => match === true) ? output.textContent = 'Welcome Back!' :
   output.textContent = 'Invalid password';
 }
+
 
 
 document.getElementById('submit').addEventListener('click', function() {
@@ -18,6 +23,6 @@ document.getElementById('submit').addEventListener('click', function() {
 
 
   hashpw(password, salt, verifiyPassword, null);
-
+  setTimeout(displayResult, 500);
 
 });
