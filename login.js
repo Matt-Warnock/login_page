@@ -1,31 +1,50 @@
-let isAMatch;
+(function () {
+  let passwordChecker = {
+    _passwords: ['greenbear757', 'organicswan134', 'bluemouse519', 'heavytiger886', 'heavyladybug575'],
+    isAMatch: [],
 
-function verifiyPassword(hash) {
-  const passwords = ['greenbear757', 'organicswan134', 'bluemouse519', 'heavytiger886', 'heavyladybug575'];
+    get passwords() {
+      return passwordChecker._passwords;
+    },
 
-  isAMatch = [];
+    verifiyPassword(hash) {
+      passwordChecker.isAMatch = [];
+      let storeResults = result => passwordChecker.isAMatch.push(result);
+      passwordChecker.passwords.forEach(password => checkpw(password, hash, storeResults, null));
+    },
 
-  passwords.forEach(
-    (item) => checkpw(item, hash,
-    (result) => {return isAMatch.push(result);}, null));
-}
+    userHash(enteredPassword) {
+      const salt = gensalt(5);
+      hashpw(enteredPassword, salt, passwordChecker.verifiyPassword, null);
+    },
 
-function displayResult() {
-  const output = document.getElementById('validation');
+    checkResult() {
+      return this.isAMatch.some(match => match);
+    },
+  };
 
-  return isAMatch.some(
-           (match) => match === true) ?
-            output.textContent = 'Welcome Back!' :
-            output.textContent = 'Invalid password';
-}
+  const ui = {
+    _userPassword: document.getElementById('password_field'),
+    _output: document.getElementById('validation'),
 
+    get userPassword() {
+      return this._userPassword.value;
+    },
 
-document.getElementById('submit').addEventListener('click', function() {
+    displayResult(match) {
+      match ? ui._output.textContent = 'Welcome Back!' :
+              ui._output.textContent = 'Invalid password';
+    },
 
-  let userPassword = document.getElementById('password_field').value;
-  let salt = gensalt(5);
+    clickStart() {
+      document.getElementById('submit').addEventListener('click', () => {
+        passwordChecker.userHash(this.userPassword);
+        setTimeout(() => this.displayResult(passwordChecker.checkResult()), 500);
 
-  hashpw(userPassword, salt, verifiyPassword, null);
-  setTimeout(displayResult, 500);
+      });
+    }
+  };
 
-});
+  ui.clickStart();
+
+})();

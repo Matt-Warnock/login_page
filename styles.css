@@ -41,9 +41,7 @@ input {
   box-shadow: 2px -2px 5px 0.5px rgba(0,0,0,0.75),
         inset -5px 4px 10px 1px rgba(0,0,0,0.67);
 }
-input:hover {
-  cursor: grab;
-}
+
 label {
   padding: 8px 10px;
   border-right: 1px inset #666;
@@ -79,15 +77,12 @@ label {
 }
 .button {
   background: linear-gradient(#52CFEB, #42A2BC);
-  padding: 7px;
+  padding: 3px 7px 7px;
   border-radius: 40px;
   box-shadow: -2px 2px 5px 1px rgba(0,0,0,0.75),
         inset 3px -4px 10px 1px rgba(0,0,0,0.67);
 }
-.button:hover {
-  background: #52CFEB;
-  cursor: grab;
-}
+
 .button:active {
   box-shadow: inset -2px 1px 10px 1px rgba(0,0,0,0.67);
 }
