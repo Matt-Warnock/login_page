@@ -19,8 +19,7 @@
     },
 
     checkResult() {
-      let passwordMatched = this.isAMatch.some(match => match);
-      ui.displayResult = passwordMatched;
+      return this.isAMatch.some(match => match);
     },
   };
 
@@ -32,8 +31,7 @@
       return this._userPassword.value;
     },
 
-    set displayResult(match) {
-      if(typeof match === 'boolean')
+    displayResult(match) {
       match ? ui._output.textContent = 'Welcome Back!' :
               ui._output.textContent = 'Invalid password';
     },
@@ -41,7 +39,7 @@
     clickStart() {
       document.getElementById('submit').addEventListener('click', () => {
         passwordChecker.userHash(this.userPassword);
-        setTimeout(() => passwordChecker.checkResult(), 500);
+        setTimeout(() => this.displayResult(passwordChecker.checkResult()), 500);
 
       });
     }
